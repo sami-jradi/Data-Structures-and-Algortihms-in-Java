@@ -4,8 +4,8 @@ public class LinearTime {
 
     public static void main(String[] args) {
 
-        String[] nemo = {"nemo"};
-        String[] array = {"Sami", "Jradi", "Nemo"};
+        String[] nemo = {"Nemo"};
+        String[] array = {"Sami", "Jradi", "Nemo", "Sami", "Sami", "Sami"};
 
         findNemo(array); // bigO notation of O(n) --> Linear time
 
@@ -16,8 +16,10 @@ public class LinearTime {
         long startTime = System.currentTimeMillis();
 
         for (String s : array) {
-            if (s.equals("nemo")) {
+            System.out.println("Running");
+            if (s.equals("Nemo")) {
                 System.out.println("Found Nemo!");
+                break;
             }
         }
 
