@@ -7,7 +7,7 @@ public class ReverseString {
         String newString = "";
         for (int i = 0; i < array.length; i++) {
             char c = array[(array.length - 1) - i];
-            newString = newString + c;
+            newString +=  c;
         }
 
         return newString;
