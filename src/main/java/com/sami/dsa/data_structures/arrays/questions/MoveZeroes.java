@@ -24,7 +24,7 @@ public class MoveZeroes {
             i++;
         }
 
-        // next stepp is to append the zeroes to the end of the array
+        // next step is to append the zeroes to the end of the array
         while (j < n) {
             nums[j] = 0;
             j++;
