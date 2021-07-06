@@ -1,4 +1,4 @@
-package com.sami.dsa.data_structures.queues;
+package com.sami.dsa.data_structures.queues.queues_using_linkedlist;
 
 public class Queue {
 
