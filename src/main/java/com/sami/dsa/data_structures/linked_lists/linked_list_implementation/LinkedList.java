@@ -88,6 +88,24 @@ public class LinkedList {
         return currentNode;
     }
 
+    public void reverse() {
+
+        Node first = this.head;
+        this.tail = this.head;
+        Node second = first.next;
+
+        while (second != null) {
+            Node temp = second.next;
+            second.next = first;
+            first = second;
+            second = temp;
+        }
+
+        this.head.next = null;
+        this.head = first;
+
+    }
+
     public void printList() {
         int[] array = new int[length];
         Node currentNode = this.head;
@@ -113,6 +131,8 @@ public class LinkedList {
         linkedList.insert(2, 99);
 
         linkedList.remove(3);
+
+        linkedList.reverse();
 
         linkedList.printList();
 
