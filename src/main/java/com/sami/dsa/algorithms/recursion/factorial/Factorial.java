@@ -14,7 +14,7 @@ public class Factorial {
             return 1;
         }
 
-        return number * findFactorialRecursive(number-1);
+        return number * findFactorialRecursive(number - 1);
     }
 
     public int findFactorialIterative(int number) {
