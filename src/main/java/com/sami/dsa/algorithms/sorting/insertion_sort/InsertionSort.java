@@ -1,4 +1,4 @@
-package com.sami.dsa.algorithms.insertion_sort;
+package com.sami.dsa.algorithms.sorting.insertion_sort;
 
 import java.util.Arrays;
 
