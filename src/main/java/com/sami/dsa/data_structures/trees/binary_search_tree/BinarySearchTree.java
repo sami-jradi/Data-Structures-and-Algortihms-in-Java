@@ -1,5 +1,7 @@
 package com.sami.dsa.data_structures.trees.binary_search_tree;
 
+import java.util.ArrayList;
+
 public class BinarySearchTree {
 
     private Node root;
@@ -142,6 +144,56 @@ public class BinarySearchTree {
         }
     }
 
+    public ArrayList<Integer> breadthFirstSearch() {
+        Node currentNode = this.root;
+
+        ArrayList<Integer> resultArray = new ArrayList<>();
+
+        ArrayList<Node> queue = new ArrayList<>();
+
+        queue.add(currentNode);
+
+        while (queue.size() > 0) {
+
+            currentNode = queue.remove(0);
+
+            resultArray.add(currentNode.value);
+
+            if (currentNode.left != null) {
+                queue.add(currentNode.left);
+            }
+
+            if (currentNode.right != null) {
+                queue.add(currentNode.right);
+            }
+
+        }
+
+        return resultArray;
+    }
+
+    public ArrayList<Integer> breadthFirstSearchRecursive(ArrayList<Node> queue,
+                                                          ArrayList<Integer> resultArray) {
+
+        if (queue.size() == 0) {
+            return resultArray;
+        }
+
+        Node currentNode = queue.remove(0);
+
+        resultArray.add(currentNode.value);
+
+        if (currentNode.left != null) {
+            queue.add(currentNode.left);
+        }
+
+        if (currentNode.right != null) {
+            queue.add(currentNode.right);
+        }
+
+        return breadthFirstSearchRecursive(queue, resultArray);
+    }
+
     public void getInTraversalOrder() {
         doInOrder(this.root);
     }
@@ -173,6 +225,13 @@ public class BinarySearchTree {
         bst.remove(20);
 
         bst.getInTraversalOrder();
+
+        System.out.println(bst.breadthFirstSearch());
+
+        ArrayList<Node> queue = new ArrayList<>();
+        queue.add(bst.root);
+
+        System.out.println(bst.breadthFirstSearchRecursive(queue, new ArrayList<>()));
 
     }
 }
